@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="title">Portafolio Juan De Abreu</title>
+    <link rel="shortcut icon" href="public/portafolio2.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/translations.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primario: '#061735',
+                        segundario: '#0c3469',
+                        oscuro: '#030712',
+                        resaltar: '#1e5e9b',
+
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="min-h-screen text-white font-['Roboto']">
+    <!-- Navbar -->
+    <nav class="bg-primario h-auto backdrop-blur fixed inset-x-0 top-0 z-100 border-b border-slate-700">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold " data-translate="name">Juan De Abreu</a>
+            <ul class="flex items-center space-x-8">
+                <li><a href="#hero" class="hover:text-blue-400 transition" data-translate="nav.home">Inicio</a></li>
+                <li><a href="#proyectos" class="hover:text-blue-400 transition"
+                        data-translate="nav.projects">Proyectos</a></li>
+                <li><a href="#contacto" class="hover:text-blue-400 transition" data-translate="nav.contact">Contacto</a>
+                </li>
+                <button id="lang-toggle"
+                    class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2">
+                    <span id="lang-text" data-translate="lang.es">Español</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                    </svg>
+                </button>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero"
+        class="bg-gradient-to-br from-slate-900 via-segundario to-slate-900 min-h-screen flex items-center justify-center pt-16">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6" data-translate="hero.title">Full-Stack Developer</h1>
+            <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed"
+                data-translate="hero.subtitle">Especializado en React, TailwindCSS, PHP, JS, SQL y apps deportivas</p>
+
+                <a href="#proyectos"
+                    class="bg-primario hover:bg-segundario hover:scale-105 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-400 shadow-2xl hover:shadow-black inline-block"
+                    data-translate="hero.cta">Ver Proyectos</a>
+
+        </div>
+    </section>
+
+    <footer class="bg-primario py-4">
+        <div class="max-w-6xl mx-auto px-6 text-center text-slate-400">
+            <p data-translate="footer">© 2025 Juan De Abreu. Hecho con TailwindCSS.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

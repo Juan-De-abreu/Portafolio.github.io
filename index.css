@@ -1,0 +1,26 @@
+
+*{
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body{
+    background: black;
+    color: white;
+}
+header{
+    background: blue;
+}
+footer{
+    background: red;
+}
+.scale-105{
+    scale: 1.05;
+}

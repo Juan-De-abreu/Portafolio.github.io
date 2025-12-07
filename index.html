@@ -33,14 +33,14 @@
 
 <body class="min-h-screen text-white font-['Roboto']">
     <!-- Navbar -->
-    <nav class="bg-primario h-auto backdrop-blur fixed inset-x-0 top-0 z-100 border-b border-slate-700">
+    <nav class="bg-primario bg-opacity-100 h-auto backdrop-blur fixed inset-x-0 top-0 z-1 border-b border-slate-700">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="#" class="text-2xl font-bold " data-translate="name">Juan De Abreu</a>
             <ul class="flex items-center space-x-8">
                 <li><a href="#hero" class="hover:text-blue-400 transition" data-translate="nav.home">Inicio</a></li>
                 <li><a href="#proyectos" class="hover:text-blue-400 transition"
                         data-translate="nav.projects">Proyectos</a></li>
-                <li><a href="#contacto" class="hover:text-blue-400 transition" data-translate="nav.contact">Contacto</a>
+                <li><a href="#about" class="hover:text-blue-400 transition" data-translate="nav.contact">Contacto</a>
                 </li>
                 <button id="lang-toggle"
                     class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2">
@@ -62,12 +62,172 @@
             <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed"
                 data-translate="hero.subtitle">Especializado en React, TailwindCSS, PHP, JS, SQL y apps deportivas</p>
 
-                <a href="#proyectos"
-                    class="bg-primario hover:bg-segundario hover:scale-105 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-400 shadow-2xl hover:shadow-black inline-block"
-                    data-translate="hero.cta">Ver Proyectos</a>
+            <a href="#proyectos"
+                class="bg-primario hover:bg-segundario hover:scale-105 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-400 shadow-2xl hover:shadow-black inline-block"
+                data-translate="hero.cta">Ver Proyectos</a>
 
         </div>
+
+        <div
+            class="mb-1 h-14 shadow-md shadow-oscuro bg-primario bg-opacity-50 backdrop-blur  border-b border-slate-700 border-t w-full block absolute bottom-0 justify-between flex px-20 z-0">
+            <div class=" my-auto">
+                <p class="text-lg">1 ano de experiencia</p>
+            </div>
+            <div class="flex space-x-2">
+                <img src="public/react.svg" alt="" class="h-10 my-auto">
+                <img src="public/php.svg" alt="" class="h-10 my-auto">
+                <img src="public/css3.svg" alt="" class="h-10 my-auto">
+                <img src="public/html5.svg" alt="" class="h-10 my-auto">
+                <img src="public/tailwindcss-dark.svg" alt="" class="h-10 my-auto">
+                <img src="public/bootstrap.svg" alt="" class="h-10 my-auto">
+                <img src="public/expressjs-dark.svg" alt="" class="h-10 my-auto">
+                <img src="public/git.svg" alt="" class="h-10 my-auto">
+                <img src="public/java.svg" alt="" class="h-10 my-auto">
+                <img src="public/javascript.svg" alt="" class="h-10 my-auto">
+                <img src="public/mysql-wordmark.svg" alt="" class="h-10 my-auto">
+                <img src="public/nodejs-dark.svg" alt="" class="h-10 my-auto">
+                <img src="public/python-dark.svg" alt="" class="h-10 my-auto">
+            </div>
+        </div>
+
     </section>
+
+
+    <!-- Sobre Mí -->
+    <section class="py-24 bg-gradient-to-tr from-slate-900 via-primario to-segundario min-h-[80vh]">
+        <div class="max-w-[90vw] mx-auto px-6" id="about">
+            <div class="grid md:grid-cols-[50%,50%] gap-12 items-center justify-between">
+
+                <!-- Texto -->
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6"
+                        data-translate="about.title">Sobre Mí</h2>
+
+                    <p class="text-lg mb-6 leading-relaxed" data-translate="about.intro">
+                        Estudiante de <strong>Ingeniería en Computación</strong> (nacido en 2005) apasionado por el
+                        desarrollo full-stack.
+                        Construyo aplicaciones web modernas con React, PHP y bases de datos MySQL.
+                    </p>
+
+                    <p class="text-lg text-slate-300 mb-8 leading-relaxed" data-translate="about.experience">
+                        Experiencia práctica en <strong>proyectos deportivos</strong> (MLB, equipos venezolanos) usando
+                        JWT para autenticación segura,
+                        APIs RESTful y despliegue en hosting gratuito. Me especializo en interfaces responsive con
+                        TailwindCSS y Vite.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://github.com/Juan-De-abreu" target="_blank"
+                            class="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-xl text-sm font-semibold transition-all border border-gray-600 hover:scale-105">GitHub</a>
+                        <a href="https://www.linkedin.com/in/ing-juan-de-abreu/" target="_blank"
+                            class="px-6 py-3 bg-resaltar rounded-xl text-sm font-semibold transition-all hover:bg-segundario hover:scale-105">LinkedIn</a>
+                        <a href="mailto:juan_abreu_2005@hotmail.com"
+                            class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-xl text-sm font-semibold transition-all hover:scale-105">Contactar</a>
+                    </div>
+                </div>
+                <div class="text-center md:text-left">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- skills -->
+
+        <div class="max-w-[90vw] mx-auto px-6">
+        <!-- Título -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent" data-translate="skills.title">Habilidades</h2>
+            <p class="text-xl text-slate-400 mt-4" data-translate="skills.subtitle">Tecnologías que domino en desarrollo full-stack</p>
+        </div>
+
+        <!-- Grid de Iconos -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8">
+            
+            <!-- React -->
+            <div class="group text-center p-6 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-105 border border-white/20 hover:border-blue-400">
+                <div class="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" class="w-16 h-16" fill="#61DAFB">
+                        <path d="M12.001 2.002l-3.24 6.24-6.97 1.22 6.26 5.767-1.65 9.626 8.6-4.522 8.6 4.522-1.65-9.626 6.26-5.767-6.97-1.22z"/>
+                    </svg>
+                </div>
+                <p class="font-semibold text-slate-200 group-hover:text-blue-400 transition-colors">React</p>
+            </div>
+
+            <!-- TailwindCSS -->
+            <div class="group text-center p-6 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-105 border border-white/20 hover:border-emerald-400">
+                <svg class="w-16 h-16 mx-auto mb-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                </svg>
+                <p class="font-semibold text-slate-200 group-hover:text-emerald-400 transition-colors">TailwindCSS</p>
+            </div>
+
+            <!-- Vite -->
+            <div class="group text-center p-6 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-105 border border-white/20 hover:border-green-400">
+                <svg class="w-16 h-16 mx-auto mb-4 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12zm10-6v12l-6-6 6-6z"/>
+                </svg>
+                <p class="font-semibold text-slate-200 group-hover:text-green-400 transition-colors">Vite</p>
+            </div>
+
+            <!-- PHP -->
+            <div class="group text-center p-6 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-105 border border-white/20 hover:border-purple-400">
+                <svg class="w-16 h-16 mx-auto mb-4 text-purple-500" viewBox="0 0 24 24" fill="currentColor">
+                    <text x="12" y="18" font-weight="bold" font-size="14" text-anchor="middle" font-family="monospace">PHP</text>
+                </svg>
+                <p class="font-semibold text-slate-200 group-hover:text-purple-400 transition-colors">PHP</p>
+            </div>
+
+            <!-- MySQL -->
+            <div class="group text-center p-6 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-105 border border-white/20 hover:border-orange-400">
+                <svg class="w-16 h-16 mx-auto mb-4 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
+                    <rcle cx="12" cy="12" r="10"/>
+                    <path d="M8 8h8v8H8z"/>
+                </svg>
+                <p class="font-semibold text-slate-200 group-hover:text-orange-400 transition-colors">MySQL</p>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="group text-center p-6 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-105 border border-white/20 hover:border-yellow-400">
+                <svg class="w-16 h-16 mx-auto mb-4 text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 22h20L12 2zm-1 8.292L9.414 12l1.586 1.708.707-.707 1.707 1.707-.707.707L15 12l-1.586-1.708-.707.707z"/>
+                </svg>
+                <p class="font-semibold text-slate-200 group-hover:text-yellow-400 transition-colors">JavaScript</p>
+            </div>
+
+            <!-- Git -->
+            <div class="group text-center p-6 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-105 border border-white/20 hover:border-red-400">
+                <svg class="w-16 h-16 mx-auto mb-4 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                </svg>
+                <p class="font-semibold text-slate-200 group-hover:text-orange-400 transition-colors">Git</p>
+            </div>
+        </div>
+
+        <!-- Barra de Skills (Opcional) -->
+        <div class="mt-20 grid md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-200">Frontend</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between"><span>React + Vite</span><span class="text-emerald-400 font-semibold">90%</span></div>
+                    <div class="w-full bg-white/10 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-emerald-400 to-blue-400 h-2 rounded-full w-[90%]"></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-200">Backend</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between"><span>PHP + MySQL</span><span class="text-emerald-400 font-semibold">85%</span></div>
+                    <div class="w-full bg-white/10 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-purple-500 to-orange-500 h-2 rounded-full w-[85%]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </section>
+
 
     <footer class="bg-primario py-4">
         <div class="max-w-6xl mx-auto px-6 text-center text-slate-400">

@@ -34,66 +34,61 @@
 </head>
 
 <body class="min-h-screen text-white font-['Roboto']">
-    <!-- Navbar -->
     <nav class="bg-primario bg-opacity-100 h-auto backdrop-blur fixed inset-x-0 top-0 z-10 border-b border-slate-700">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="text-lg lg:text-2xl font-bold " data-translate="name">Juan De Abreu</a>
-            <ul class="items-center space-x-8 hidden lg:flex">
-                <li><a href="#hero" class="hover:text-blue-400 transition" data-translate="nav.home">Inicio</a></li>
-                <li><a href="#proyectos" class="hover:text-blue-400 transition"
-                        data-translate="nav.projects">Proyectos</a></li>
-                <li><a href="#contacto" class="hover:text-blue-400 transition" data-translate="nav.contact">Contacto</a>
-                </li>
-                <button id="lang-toggle"
-                    class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2">
-                    <span id="lang-text" data-translate="lang.es">Español</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
-                    </svg>
-                </button>
-            </ul>
-            <!-- Hamburguesa MOBILE SOLO -->
-            <div class="lg:hidden ml-4">
-                <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-white/10 transition-all">
-                    <!-- Icono hamburguesa -->
-                    <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <!-- Icono X (oculto inicialmente) -->
-                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#" class="text-lg lg:text-2xl font-bold " data-translate="name">Juan De Abreu</a>
 
-            <!-- Menú Móvil ANIMADO -->
-            <div id="mobile-menu"
-                class="lg:hidden bg-primario/95 backdrop-blur-md border-t border-slate-700 px-6 pb-6 pt-4 absolute top-full left-0 right-0 z-40 hidden opacity-0">
-                <div class="flex flex-col space-y-4 text-lg text-center">
-                    <a href="#hero" class="hover:text-blue-400 transition-all py-2 block"
-                        data-translate="nav.home">Inicio</a>
-                    <a href="#proyectos" class="hover:text-blue-400 transition-all py-2 block"
-                        data-translate="nav.projects">Proyectos</a>
-                    <a href="#about" class="hover:text-blue-400 transition-all py-2 block"
-                        data-translate="nav.contact">Contacto</a>
-                    <button id="lang-toggle"
-                        class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-base font-semibold mt-4 w-full text-left flex items-center justify-center space-x-2 transition-all">
-                        <span id="lang-text" data-translate="lang.es">Español</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
+    <!-- Desktop -->
+    <ul class="items-center space-x-8 hidden lg:flex">
+      <li><a href="#hero" class="hover:text-blue-400 transition" data-translate="nav.home">Inicio</a></li>
+      <li><a href="#proyectos" class="hover:text-blue-400 transition" data-translate="nav.projects">Proyectos</a></li>
+      <li><a href="#contacto" class="hover:text-blue-400 transition" data-translate="nav.contact">Contacto</a></li>
+      <button
+        class="lang-toggle px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2">
+        <span class="lang-text" data-translate="lang.es">Español</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+        </svg>
+      </button>
+    </ul>
 
+    <!-- Hamburguesa MOBILE SOLO -->
+    <div class="lg:hidden ml-4">
+      <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-white/10 transition-all">
+        <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
 
+    <!-- Menú Móvil ANIMADO -->
+    <div id="mobile-menu"
+      class="lg:hidden bg-primario/95 backdrop-blur-md border-t border-slate-700 px-6 pb-6 pt-4 absolute top-full left-0 right-0 z-40 hidden opacity-0">
+      <div class="flex flex-col space-y-4 text-lg text-center">
+        <a href="#hero" class="hover:text-blue-400 transition-all py-2 block" data-translate="nav.home">Inicio</a>
+        <a href="#proyectos" class="hover:text-blue-400 transition-all py-2 block"
+          data-translate="nav.projects">Proyectos</a>
+        <a href="#contacto" class="hover:text-blue-400 transition-all py-2 block"
+          data-translate="nav.contact">Contacto</a>
+        <button
+          class="lang-toggle px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-base font-semibold mt-4 w-full text-left flex items-center justify-center space-x-2 transition-all">
+          <span class="lang-text" data-translate="lang.es">Español</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
 
-        </div>
-    </nav>
 
     <!-- Hero -->
     <section id="hero"

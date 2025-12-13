@@ -29,18 +29,20 @@
         }
     </script>
     <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/contact-form.js"></script>
 </head>
 
 <body class="min-h-screen text-white font-['Roboto']">
     <!-- Navbar -->
-    <nav class="bg-primario bg-opacity-100 h-auto backdrop-blur fixed inset-x-0 top-0 z-1 border-b border-slate-700">
+    <nav class="bg-primario bg-opacity-100 h-auto backdrop-blur fixed inset-x-0 top-0 z-10 border-b border-slate-700">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="text-2xl font-bold " data-translate="name">Juan De Abreu</a>
-            <ul class="flex items-center space-x-8">
+            <a href="#" class="text-lg lg:text-2xl font-bold " data-translate="name">Juan De Abreu</a>
+            <ul class="items-center space-x-8 hidden lg:flex">
                 <li><a href="#hero" class="hover:text-blue-400 transition" data-translate="nav.home">Inicio</a></li>
                 <li><a href="#proyectos" class="hover:text-blue-400 transition"
                         data-translate="nav.projects">Proyectos</a></li>
-                <li><a href="#about" class="hover:text-blue-400 transition" data-translate="nav.contact">Contacto</a>
+                <li><a href="#contacto" class="hover:text-blue-400 transition" data-translate="nav.contact">Contacto</a>
                 </li>
                 <button id="lang-toggle"
                     class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2">
@@ -51,6 +53,45 @@
                     </svg>
                 </button>
             </ul>
+            <!-- Hamburguesa MOBILE SOLO -->
+            <div class="lg:hidden ml-4">
+                <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-white/10 transition-all">
+                    <!-- Icono hamburguesa -->
+                    <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Icono X (oculto inicialmente) -->
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menú Móvil ANIMADO -->
+            <div id="mobile-menu"
+                class="lg:hidden bg-primario/95 backdrop-blur-md border-t border-slate-700 px-6 pb-6 pt-4 absolute top-full left-0 right-0 z-40 hidden opacity-0">
+                <div class="flex flex-col space-y-4 text-lg text-center">
+                    <a href="#hero" class="hover:text-blue-400 transition-all py-2 block"
+                        data-translate="nav.home">Inicio</a>
+                    <a href="#proyectos" class="hover:text-blue-400 transition-all py-2 block"
+                        data-translate="nav.projects">Proyectos</a>
+                    <a href="#about" class="hover:text-blue-400 transition-all py-2 block"
+                        data-translate="nav.contact">Contacto</a>
+                    <button id="lang-toggle"
+                        class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-base font-semibold mt-4 w-full text-left flex items-center justify-center space-x-2 transition-all">
+                        <span id="lang-text" data-translate="lang.es">Español</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+
+
         </div>
     </nav>
 
@@ -69,24 +110,41 @@
         </div>
 
         <div
-            class="mb-1 h-14 shadow-md shadow-oscuro bg-primario bg-opacity-50 backdrop-blur  border-b border-slate-700 border-t w-full block absolute bottom-0 justify-between flex px-20 z-0">
+            class="mb-1 grid grid-cols-[30%,70%] h-14 shadow-md shadow-oscuro bg-primario bg-opacity-50 backdrop-blur  border-b border-slate-700 border-t w-full block absolute bottom-0 pl-5 lg:pl-20 lg:pr-5 z-0">
             <div class=" my-auto">
-                <p class="text-lg">1 ano de experiencia</p>
+                <p class="text-lg" data-translate="hero.year">1 año de experiencia</p>
             </div>
-            <div class="flex space-x-2">
-                <img src="public/react.svg" alt="" class="h-10 my-auto">
-                <img src="public/php.svg" alt="" class="h-10 my-auto">
-                <img src="public/css3.svg" alt="" class="h-10 my-auto">
-                <img src="public/html5.svg" alt="" class="h-10 my-auto">
-                <img src="public/tailwindcss-dark.svg" alt="" class="h-10 my-auto">
-                <img src="public/bootstrap.svg" alt="" class="h-10 my-auto">
-                <img src="public/expressjs-dark.svg" alt="" class="h-10 my-auto">
-                <img src="public/git.svg" alt="" class="h-10 my-auto">
-                <img src="public/java.svg" alt="" class="h-10 my-auto">
-                <img src="public/javascript.svg" alt="" class="h-10 my-auto">
-                <img src="public/mysql-wordmark.svg" alt="" class="h-10 my-auto">
-                <img src="public/nodejs-dark.svg" alt="" class="h-10 my-auto">
-                <img src="public/python-dark.svg" alt="" class="h-10 my-auto">
+            <div class="carousel-container my-auto">
+                <div class="carousel-track flex space-x-2">
+                    <img src="public/react.svg" alt="React" class="h-10 my-auto">
+                    <img src="public/php.svg" alt="PHP" class="h-10 my-auto">
+                    <img src="public/css3.svg" alt="CSS3" class="h-10 my-auto">
+                    <img src="public/html5.svg" alt="HTML5" class="h-10 my-auto">
+                    <img src="public/tailwindcss-dark.svg" alt="Tailwind" class="h-10 my-auto">
+                    <img src="public/bootstrap.svg" alt="Bootstrap" class="h-10 my-auto">
+                    <img src="public/expressjs-dark.svg" alt="ExpressJS" class="h-10 my-auto">
+                    <img src="public/git.svg" alt="Git" class="h-10 my-auto">
+                    <img src="public/java.svg" alt="Java" class="h-10 my-auto">
+                    <img src="public/javascript.svg" alt="JavaScript" class="h-10 my-auto">
+                    <img src="public/mysql-wordmark.svg" alt="MySQL" class="h-10 my-auto">
+                    <img src="public/nodejs-dark.svg" alt="NodeJS" class="h-10 my-auto">
+                    <img src="public/python-dark.svg" alt="Python" class="h-10 my-auto">
+
+                    <!-- Segunda copia para loop infinito -->
+                    <img src="public/react.svg" alt="React" class="h-10 my-auto">
+                    <img src="public/php.svg" alt="PHP" class="h-10 my-auto">
+                    <img src="public/css3.svg" alt="CSS3" class="h-10 my-auto">
+                    <img src="public/html5.svg" alt="HTML5" class="h-10 my-auto">
+                    <img src="public/tailwindcss-dark.svg" alt="Tailwind" class="h-10 my-auto">
+                    <img src="public/bootstrap.svg" alt="Bootstrap" class="h-10 my-auto">
+                    <img src="public/expressjs-dark.svg" alt="ExpressJS" class="h-10 my-auto">
+                    <img src="public/git.svg" alt="Git" class="h-10 my-auto">
+                    <img src="public/java.svg" alt="Java" class="h-10 my-auto">
+                    <img src="public/javascript.svg" alt="JavaScript" class="h-10 my-auto">
+                    <img src="public/mysql-wordmark.svg" alt="MySQL" class="h-10 my-auto">
+                    <img src="public/nodejs-dark.svg" alt="NodeJS" class="h-10 my-auto">
+                    <img src="public/python-dark.svg" alt="Python" class="h-10 my-auto">
+                </div>
             </div>
         </div>
 
@@ -94,14 +152,13 @@
 
 
     <!-- Sobre Mí -->
-    <section class="py-24 bg-gradient-to-tr from-slate-900 via-primario to-segundario min-h-[80vh]">
+    <section class="py-24 bg-gradient-to-tr from-slate-900 via-primario to-segundario min-h-[80dvh]">
         <div class="max-w-[90vw] mx-auto px-6" id="about">
             <div class="grid md:grid-cols-[50%,50%] gap-12 items-center justify-between">
 
                 <!-- Texto -->
                 <div>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6"
-                        data-translate="about.title">Sobre Mí</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6" data-translate="about.title">Sobre Mí</h2>
 
                     <p class="text-lg mb-6 leading-relaxed" data-translate="about.intro">
                         Estudiante de <strong>Ingeniería en Computación</strong> (nacido en 2005) apasionado por el
@@ -116,78 +173,421 @@
                         TailwindCSS y Vite.
                     </p>
 
-                    <div class="flex flex-wrap gap-4">
+                    <div class="flex flex-wrap gap-4 grid-cols-2 grid text-center lg:flex mb-10">
                         <a href="https://github.com/Juan-De-abreu" target="_blank"
                             class="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-xl text-sm font-semibold transition-all border border-gray-600 hover:scale-105">GitHub</a>
                         <a href="https://www.linkedin.com/in/ing-juan-de-abreu/" target="_blank"
                             class="px-6 py-3 bg-resaltar rounded-xl text-sm font-semibold transition-all hover:bg-segundario hover:scale-105">LinkedIn</a>
                         <a href="mailto:juan_abreu_2005@hotmail.com"
-                            class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-xl text-sm font-semibold transition-all hover:scale-105">Contactar</a>
+                            class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-xl text-sm font-semibold transition-all hover:scale-105"
+                            data-translate="contact">Contactar</a>
                     </div>
                 </div>
-                <div class="text-center md:text-left">
 
-                </div>
             </div>
         </div>
 
         <!-- skills -->
 
         <div class="max-w-[90vw] mx-auto px-6">
-        <!-- Título -->
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent" data-translate="skills.title">Habilidades</h2>
-            <p class="text-xl text-slate-400 mt-4" data-translate="skills.subtitle">Tecnologías que domino en desarrollo full-stack</p>
-        </div>
-
-        <!-- Grid de Iconos -->
-         <div class="grid grid-cols-1 lg:grid-cols-2">
-        <div class="grid grid-cols-2 md:grid-cols-3  gap-6">
-            
-            <!-- React -->
-            <div class="group my-auto text-center p-6 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-105 border border-white/20 hover:border-blue-400 z-0">
-                <div class="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                    <img src="public/react.svg" alt="React Logo" class="w-12 h-12 group-hover:scale-110 transition-all duration-300">
-                </div>
-                <p class="font-semibold text-slate-200 group-hover:text-blue-400 transition-all">React</p>
+            <!-- Título -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold" data-translate="skills.title">Habilidades</h2>
+                <p class="text-xl text-slate-400 mt-4" data-translate="skills.subtitle">Tecnologías que domino en
+                    desarrollo full-stack</p>
             </div>
-            
 
+            <!-- Grid Principal -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Grid Iconos - FIJO ALTO -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
 
+                    <!-- React + Vite -->
+                    <div
+                        class="group h-32 flip-container cursor-pointer bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-105 border border-white/10 hover:border-blue-400 rounded-xl p-3 shadow-lg hover:shadow-xl">
+                        <div class="flip-card w-full h-full">
+                            <!-- Frente -->
+                            <div class="flip-front">
+                                <img src="public/react.svg" alt="React"
+                                    class="w-10 h-10 mb-2 group-hover:scale-110 transition-transform">
+                                <p class="text-xs font-semibold text-slate-200 group-hover:text-blue-400">React</p>
+                            </div>
+                            <!-- Atrás -->
+                            <div
+                                class="flip-back bg-gradient-to-b from-blue-500/95 to-blue-700/95 text-white text-center p-2">
+                                <img src="public/Vite.js.svg" alt="Vite" class="w-8 h-8 mb-1 opacity-90">
+                                <p class="text-xs font-bold text-white">+ Vite</p>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- PHP -->
+                    <div
+                        class="group h-32 flip-container cursor-pointer bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-105 border border-white/10 hover:border-purple-400 rounded-xl p-3 shadow-lg hover:shadow-xl">
+                        <div class="flip-card w-full h-full">
+                            <div class="flip-front">
+                                <img src="public/php.svg" alt="PHP"
+                                    class="w-10 h-10 mb-2 group-hover:scale-110 transition-transform">
+                                <p class="text-xs font-semibold text-slate-200 group-hover:text-purple-400">PHP</p>
+                            </div>
+                            <div
+                                class="flip-back bg-gradient-to-b from-purple-500/95 to-purple-700/95 text-white text-center p-2">
+                                <p class="text-xs font-bold">APIs REST<br />JWT Auth</p>
+                            </div>
+                        </div>
+                    </div>
 
-        </div>
+                    <!-- JavaScript -->
+                    <div
+                        class="group h-32 flip-container cursor-pointer bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-105 border border-white/10 hover:border-yellow-400 rounded-xl p-3 shadow-lg hover:shadow-xl">
+                        <div class="flip-card w-full h-full">
+                            <div class="flip-front">
+                                <img src="public/javascript.svg" alt="JS"
+                                    class="w-10 h-10 mb-2 group-hover:scale-110 transition-transform">
+                                <p class="text-xs font-semibold text-slate-200 group-hover:text-yellow-400">JavaScript
+                                </p>
+                            </div>
+                            <div
+                                class="flip-back bg-gradient-to-b from-yellow-500/95 to-yellow-700/95 text-white text-center p-2">
+                                <p class="text-xs font-bold">DOM<br />Closures</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Barra de Skills (Opcional) -->
-        <div class="p-10 grid md:grid-cols-1">
-            <div>
-                <h3 class="text-2xl font-bold mb-4 text-slate-200">Frontend</h3>
-                <div class="space-y-3">
-                    <div class="flex justify-between"><span>React + Vite</span><span class="text-emerald-400 font-semibold">90%</span></div>
-                    <div class="w-full bg-white/10 rounded-full h-2">
-                        <div class="bg-gradient-to-r from-emerald-400 to-blue-400 h-2 rounded-full w-[90%]"></div>
+                    <!-- MySQL -->
+                    <div
+                        class="group h-32 flip-container cursor-pointer bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-105 border border-white/10 hover:border-blue-400 rounded-xl p-3 shadow-lg hover:shadow-xl">
+                        <div class="flip-card w-full h-full">
+                            <div class="flip-front">
+                                <img src="public/mysql-wordmark.svg" alt="MySQL"
+                                    class="w-10 h-10 mb-2 group-hover:scale-110 transition-transform">
+                                <p class="text-xs font-semibold text-slate-200 group-hover:text-blue-400">MySQL</p>
+                            </div>
+                            <div
+                                class="flip-back bg-gradient-to-b from-blue-500/95 to-blue-700/95 text-white text-center p-2">
+                                <p class="text-xs font-bold">phpMyAdmin<br />Queries SQL</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HTML -->
+                    <div
+                        class="group h-32 flip-container cursor-pointer bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-105 border border-white/10 hover:border-orange-400 rounded-xl p-3 shadow-lg hover:shadow-xl">
+                        <div class="flip-card w-full h-full">
+                            <div class="flip-front">
+                                <img src="public/html5.svg" alt="HTML"
+                                    class="w-10 h-10 mb-2 group-hover:scale-110 transition-transform">
+                                <p class="text-xs font-semibold text-slate-200 group-hover:text-orange-400">HTML</p>
+                            </div>
+                            <div
+                                class="flip-back bg-gradient-to-b from-orange-500/95 to-orange-700/95 text-white text-center p-2">
+                                <p class="text-xs font-bold">Semántica<br />SEO</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CSS -->
+                    <div
+                        class="group h-32 flip-container cursor-pointer bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-105 border border-white/10 hover:border-emerald-400 rounded-xl p-3 shadow-lg hover:shadow-xl">
+                        <div class="flip-card w-full h-full">
+                            <div class="flip-front">
+                                <img src="public/css3.svg" alt="CSS"
+                                    class="w-10 h-10 mb-2 group-hover:scale-110 transition-transform">
+                                <p class="text-xs font-semibold text-slate-200 group-hover:text-emerald-400">CSS</p>
+                            </div>
+                            <div
+                                class="flip-back bg-gradient-to-b from-emerald-500/95 to-emerald-700/95 text-white text-center p-2">
+                                <p class="text-xs font-bold">Flexbox<br />Grid</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TailwindCSS -->
+                    <div
+                        class="group h-32 flip-container cursor-pointer bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-105 border border-white/10 hover:border-emerald-400 rounded-xl p-3 shadow-lg hover:shadow-xl">
+                        <div class="flip-card w-full h-full">
+                            <div class="flip-front">
+                                <img src="public/tailwindcss-dark.svg" alt="Tailwind"
+                                    class="w-10 h-10 mb-2 group-hover:scale-110 transition-transform">
+                                <p class="text-xs font-semibold text-slate-200 group-hover:text-emerald-400">TailwindCSS
+                                </p>
+                            </div>
+                            <div
+                                class="flip-back bg-gradient-to-b from-emerald-500/95 to-emerald-700/95 text-white text-center p-2">
+                                <p class="text-xs font-bold">Utility-first<br />Responsive</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bootstrap -->
+                    <div
+                        class="group h-32 flip-container cursor-pointer bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-105 border border-white/10 hover:border-purple-400 rounded-xl p-3 shadow-lg hover:shadow-xl">
+                        <div class="flip-card w-full h-full">
+                            <div class="flip-front">
+                                <img src="public/bootstrap.svg" alt="Bootstrap"
+                                    class="w-10 h-10 mb-2 group-hover:scale-110 transition-transform">
+                                <p class="text-xs font-semibold text-slate-200 group-hover:text-purple-400">Bootstrap
+                                </p>
+                            </div>
+                            <div
+                                class="flip-back bg-gradient-to-b from-purple-500/95 to-purple-700/95 text-white text-center p-2">
+                                <p class="text-xs font-bold">Grid System<br />Components</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Git -->
+                    <div
+                        class="group h-32 flip-container cursor-pointer bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-105 border border-white/10 hover:border-orange-400 rounded-xl p-3 shadow-lg hover:shadow-xl">
+                        <div class="flip-card w-full h-full">
+                            <div class="flip-front">
+                                <img src="public/git.svg" alt="Git"
+                                    class="w-10 h-10 mb-2 group-hover:scale-110 transition-transform">
+                                <p class="text-xs font-semibold text-slate-200 group-hover:text-orange-400">Git</p>
+                            </div>
+                            <div
+                                class="flip-back bg-gradient-to-b from-orange-500/95 to-orange-700/95 text-white text-center p-2">
+                                <p class="text-xs font-bold">Versionado<br />Colaboración</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NodeJS -->
+                    <div
+                        class="group h-32 flip-container cursor-pointer bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-105 border border-white/10 hover:border-green-400 rounded-xl p-3 shadow-lg hover:shadow-xl">
+                        <div class="flip-card w-full h-full">
+                            <div class="flip-front">
+                                <img src="public/nodejs-dark.svg" alt="NodeJS"
+                                    class="w-10 h-10 mb-2 group-hover:scale-110 transition-transform">
+                                <p class="text-xs font-semibold text-slate-200 group-hover:text-green-400">NodeJS</p>
+                            </div>
+                            <div
+                                class="flip-back bg-gradient-to-b from-green-500/95 to-green-700/95 text-white text-center p-2">
+                                <p class="text-xs font-bold">JavaScript<br />Backend</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barra Skills -->
+                <div class="space-y-8 lg:p-10">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-slate-200">Frontend</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center"><span>React + Vite</span><span
+                                    class="text-emerald-400 font-semibold">90%</span></div>
+                            <div class="w-full bg-white/10 rounded-full h-3">
+                                <div
+                                    class="bg-gradient-to-r from-emerald-400 to-blue-400 h-3 rounded-full w-[90%] shadow-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-slate-200">Backend</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center"><span>PHP + MySQL</span><span
+                                    class="text-emerald-400 font-semibold">85%</span></div>
+                            <div class="w-full bg-white/10 rounded-full h-3">
+                                <div
+                                    class="bg-gradient-to-r from-purple-500 to-orange-500 h-3 rounded-full w-[85%] shadow-sm">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div>
-                <h3 class="text-2xl font-bold mb-4 text-slate-200">Backend</h3>
-                <div class="space-y-3">
-                    <div class="flex justify-between"><span>PHP + MySQL</span><span class="text-emerald-400 font-semibold">85%</span></div>
-                    <div class="w-full bg-white/10 rounded-full h-2">
-                        <div class="bg-gradient-to-r from-purple-500 to-orange-500 h-2 rounded-full w-[85%]"></div>
+        </div>
+
+
+    </section>
+
+    <!--Proyectos-->
+    <section id="proyectos" class="py-24 bg-gradient-to-br from-slate-900 via-primario to-segundario">
+
+
+        <section>
+            <div class="mx-auto">
+                <!-- Título -->
+                <div class="flex items-center justify-between mb-6">
+                    <div class="pl-[4%]">
+                        <h2 class="text-2xl md:text-5xl mb-2 font-bold text-white" data-translate="projects.title">
+                            Proyectos</h2>
+                        <p class="text-sm md:text-base text-slate-400 mt-1" data-translate="projects.subtitle">Explora
+                            algunos de los últimos trabajos
+                            realizados</p>
+                    </div>
+                    <!-- Botones solo en lg+ (arriba a la derecha) -->
+                    <div class="hidden lg:flex items-center gap-3 lg:pr-[5%]">
+                        <button id="projects-prev-lg"
+                            class="w-9 h-9 rounded-full border border-slate-600 flex items-center justify-center text-slate-200 hover:bg-slate-800 hover:border-slate-400 transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button id="projects-next-lg"
+                            class="w-9 h-9 rounded-full border border-slate-600 flex items-center justify-center text-slate-200 hover:bg-slate-800 hover:border-slate-400 transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Contenedor principal: ocupa 90% de ancho en lg (10% margen izq) -->
+                <div class="lg:pl-[4%] relative border-b border-slate-700">
+                    <!-- Botones móviles: laterales y pequeños, solo < lg -->
+                    <button id="projects-prev-sm"
+                        class="absolute left-1 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-slate-800/80 text-slate-100 flex items-center justify-center shadow-md hover:bg-slate-700 transition lg:hidden">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button id="projects-next-sm"
+                        class="absolute right-1 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-slate-800/80 text-slate-100 flex items-center justify-center shadow-md hover:bg-slate-700 transition lg:hidden">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+
+                    <!-- Track: carrusel horizontal -->
+                    <div id="projects-track" class="flex gap-6 overflow-x-auto scroll-smooth py-2 mix-w-[100vw]">
+
+                        <!-- CARD 1 – MLB -->
+                        <article
+                            class="project-card w-[240px] md:w-[260px] h-60 flex flex-col flex-shrink-0 bg-slate-800 rounded-xl border border-slate-700 hover:border-segundario/70 shadow-sm hover:shadow-xl transition-all duration-200">
+
+                            <!-- 35% Foto -->
+                            <div
+                                class="flex-[0.45] w-full overflow-hidden rounded-t-xl flex items-center justify-center bg-slate-900">
+                                <img src="/public/logomlb-removebg-preview.png" alt="MLB App"
+                                    class="max-h-full max-w-full object-contain">
+                            </div>
+
+                            <!-- 60% Información -->
+                            <div class="flex-[0.50] p-3 space-y-1.5 flex flex-col">
+                                <h3 class="text-xs font-semibold text-white line-clamp-2"
+                                    data-translate="title-projects-1">
+                                    App Deportiva MLB
+                                </h3>
+                                <p class="text-[11px] text-slate-400 line-clamp-3" data-translate="info-projects-1">
+                                    App full‑stack con React, PHP y MySQL para equipos venezolanos, favoritos y JWT
+                                    auth.
+                                </p>
+                                <div class="mt-1 flex flex-wrap gap-1">
+                                    <span
+                                        class="px-2 py-0.5 text-[10px] rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/40">React</span>
+                                    <span
+                                        class="px-2 py-0.5 text-[10px] rounded-full bg-purple-500/15 text-purple-200 border border-purple-500/40">PHP</span>
+                                    <span
+                                        class="px-2 py-0.5 text-[10px] rounded-full bg-sky-500/15 text-sky-200 border border-sky-500/40">MySQL</span>
+                                </div>
+                            </div>
+
+                            <!-- 5% Footer -->
+                            <div
+                                class="flex-[0.05] px-5 pb-3 pt-2 border-t border-slate-700 flex items-center justify-between">
+                                <a href="https://jjmlbvz.infinityfreeapp.com/" target="_blank"
+                                    data-translate="view-page"
+                                    class="text-[11px] font-semibold text-blue-300 hover:text-resaltar transition-all duration-200">
+                                    Visitar página web
+                                </a>
+                                <a href="https://github.com/Juan-De-abreu/Pagina-MLB" target="_blank"
+                                    data-translate="projects.code"
+                                    class="text-[11px] font-medium text-slate-300 hover:text-blue-300 transition-all duration-200">
+                                    Código
+                                </a>
+                            </div>
+                        </article>
+
+
+                        <!-- CARD 2 – Ejemplo -->
+
+
+                        <!-- CARD 3+ : copia y cambia contenido -->
+                        <!-- ... -->
+
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
+        </section>
 
 
-    </div>
+    </section>
+
+    <!--Formulario-->
+    <section>
+        <section>
+            <section id="contacto" class="py-10 bg-gradient-to-tr from-slate-900 via-primario to-segundario">
+                <div class="max-w-3xl mx-auto px-4">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6" data-translate="contact.title">
+                        Contáctame
+                    </h2>
+                    <p class="text-slate-400 mb-8" data-translate="contact.subtitle">
+                        Completa el formulario y responderé lo antes posible.
+                    </p>
+
+                    <form id="contact-form" class="space-y-5 bg-slate-800/70 p-6 rounded-2xl border border-slate-700">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-200 mb-1"
+                                data-translate="contact.nameLabel">
+                                Nombre completo
+                            </label>
+                            <input id="name" name="user_name" type="text" required
+                                class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-200 mb-1"
+                                data-translate="contact.emailLabel">
+                                Correo electrónico
+                            </label>
+                            <input id="email" name="user_email" type="email" required
+                                class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-slate-200 mb-1"
+                                data-translate="contact.subjectLabel">
+                                Asunto
+                            </label>
+                            <input id="subject" name="subject" type="text" required
+                                class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-200 mb-1"
+                                data-translate="contact.messageLabel">
+                                Mensaje
+                            </label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-slate-100 text-sm resize-y focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                        </div>
+
+                        <p id="form-error" class="text-sm text-red-400 hidden"></p>
+                        <p id="form-success" class="text-sm text-emerald-400 hidden"></p>
+
+                        <button type="submit"
+                            class="w-full md:w-auto px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-sm font-semibold text-white rounded-lg flex items-center justify-center gap-2 transition">
+                            <span data-translate="contact.submit">Enviar mensaje</span>
+                            <span id="form-spinner"
+                                class="hidden w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </section>
+
 
     </section>
 
 
-    <footer class="bg-primario py-4">
+
+
+
+    <footer class=" bg-primario py-4 border-t border-slate-700">
         <div class="max-w-6xl mx-auto px-6 text-center text-slate-400">
             <p data-translate="footer">© 2025 Juan De Abreu. Hecho con TailwindCSS.</p>
         </div>
